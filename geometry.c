@@ -197,3 +197,19 @@ int Error_check(char* text)
     }
     return 1;
 }
+
+int main()
+{
+    FILE* open;
+    char text[80];
+    if ((open = fopen("text.txt", "r")) == NULL) {
+        printf("Error: can't open the file");
+        return 1;
+    }
+    while (fgets(text, 80, open) != NULL) {
+        if (Error_check(text) == 0) {
+            printf("%s", text);
+        }
+    }
+    return 0;
+}
