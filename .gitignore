@@ -1,1 +1,5 @@
-*.exe
+*.a
+*.d
+*.o
+bin/geometry
+.vscode
