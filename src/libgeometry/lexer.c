@@ -1,5 +1,6 @@
 #include <libgeometry/geom_parser.h>
 #include <libgeometry/lexer.h>
+
 #include <ctype.h>
 #include <stdlib.h>
 
