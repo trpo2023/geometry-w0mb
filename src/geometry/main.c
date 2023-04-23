@@ -2,13 +2,45 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+<<<<<<< HEAD
 #include <math.h>
 #include <libgeometry/calculate.h>
+||||||| parent of c60446d (funcs for culc area and perimetr in main-file)
+
+=======
+#include <math.h>
+
+>>>>>>> c60446d (funcs for culc area and perimetr in main-file)
 #include <libgeometry/geom_parser.h>
 #include <libgeometry/lexer.h>
 #include <libgeometry/intersect.h>
 
 #define SIZE 100
+#define pi 3.14159265359
+
+float circle_area(double radius) //площадь по дифолту перменных
+{
+    return pi * radius * radius;
+}
+
+float circle_perimeter(double radius) //периметр по дифолту перменных
+{
+    return 2 * pi * radius;
+}
+
+struct point //определение координаты по иксу игрику
+{
+    double x;
+    double y;
+};
+
+struct circle // определение радиуса
+{
+    struct point Center; // ?
+    double radius;
+    double perimeter;
+    double area;
+};
 
 struct point center_search(char* arr, int* num) // ищем центр круга
 {
@@ -62,6 +94,7 @@ struct point2 center_search2(char* arr, int* num) // ищем центр кру�
 
 void show_circle(struct circle* Circle)
 {
+<<<<<<< HEAD
     printf("\ncircle(%.2f %.2f, %.2f, %.2f, %.2f)\n",
            Circle->Center.x,
            Circle->Center.y,
@@ -78,7 +111,22 @@ void show_circle2(struct circle2* Circle2)
            Circle2->radius2,
            Circle2->perimeter2,
            Circle2->area2);
+||||||| parent of c60446d (funcs for culc area and perimetr in main-file)
+    printf("\ncircle(%.2f %.2f, %.2f)\n",
+           Circle->center.x,
+           Circle->center.y,
+           Circle->radius);
+=======
+    printf("\ncircle(%.2f %.2f, %.2f, %.2f, %.2f)\n",
+           Circle->center.x,
+           Circle->center.y,
+           Circle->radius,
+           Circle->perimeter,
+           Circle->area);
+>>>>>>> c60446d (funcs for culc area and perimetr in main-file)
 };
+
+
 
 int main()
 {   
@@ -121,7 +169,9 @@ int main()
         figure[num] = enter[i];
         num++;
     }
+    
 
+<<<<<<< HEAD
     char enter1[SIZE], figure1[SIZE];
     num = 0;
 
@@ -159,5 +209,9 @@ int main()
 
     intersection(&Circle, &Circle2);
 
+||||||| parent of c60446d (funcs for culc area and perimetr in main-file)
+=======
+    
+>>>>>>> c60446d (funcs for culc area and perimetr in main-file)
     return 0;
 }
