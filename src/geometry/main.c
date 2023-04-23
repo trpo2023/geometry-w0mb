@@ -2,11 +2,23 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <math.h>
 
 #include <libgeometry/geom_parser.h>
 #include <libgeometry/lexer.h>
 
 #define SIZE 100
+#define pi 3.14159265359
+
+float circle_area(double radius) //площадь по дифолту перменных
+{
+    return pi * radius * radius;
+}
+
+float circle_perimeter(double radius) //периметр по дифолту перменных
+{
+    return 2 * pi * radius;
+}
 
 struct point //определение координаты по иксу игрику
 {
@@ -18,6 +30,8 @@ struct circle // определение радиуса
 {
     struct point center; // ?
     double radius;
+    double perimeter;
+    double area;
 };
 
 struct point center_search(char* arr, int* num) // ищем центр круга
@@ -34,20 +48,28 @@ struct circle circle_search(struct point* Center, char* arr, int* num)
 {
     struct circle Circle; // ?
 
+    double radius = radius_search(arr, num);
+
     Circle.center.x = Center->x; // ?
     Circle.center.y = Center->y; // ?
-    Circle.radius = radius_search(arr, num);
+    Circle.radius = radius;
+    Circle.perimeter = circle_perimeter(radius);
+    Circle.area = circle_area(radius);
 
     return Circle;
 };
 
 void show_circle(struct circle* Circle)
 {
-    printf("\ncircle(%.2f %.2f, %.2f)\n",
+    printf("\ncircle(%.2f %.2f, %.2f, %.2f, %.2f)\n",
            Circle->center.x,
            Circle->center.y,
-           Circle->radius);
+           Circle->radius,
+           Circle->perimeter,
+           Circle->area);
 };
+
+
 
 int main()
 {
@@ -86,6 +108,8 @@ int main()
         figure[num] = enter[i];
         num++;
     }
+    
 
+    
     return 0;
 }
