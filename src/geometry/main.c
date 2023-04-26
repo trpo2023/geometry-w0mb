@@ -85,6 +85,9 @@ int main()
     char enter[SIZE], figure[SIZE];
     int num = 0;
 
+    struct circle Circle;
+    struct circle2 Circle2;
+
     printf("Enter the first circle like that 'circle(x y,r)' or press enter to exit:\n");
 
     fgets(enter, SIZE, stdin);
@@ -97,7 +100,7 @@ int main()
             if (strcmp(figure, "circle") == 0) 
             {   
                 struct point Center = center_search(enter, &num);
-                struct Circle = circle_search(&Center, enter, &num);
+                Circle = circle_search(&Center, enter, &num);
                 is_end_empty(enter, &num);
                 show_circle(&Circle);
                 break;
@@ -132,7 +135,7 @@ int main()
             if (strcmp(figure1, "circle") == 0)
             {
                 struct point2 Center2 = center_search2(enter1, &num);
-                struct Circle2 = circle_search(&Center2, enter1, &num); 
+                Circle2 = circle_search2(&Center2, enter1, &num); 
                 is_end_empty(enter1, &num);
                 show_circle2(&Circle2);
                 break;
@@ -152,6 +155,6 @@ int main()
         figure1[num] = enter1[i];
         num++;
     }
-    intersection(Circle, Circle2);
+    intersection(&Circle, &Circle2);
     return 0;
 }
