@@ -290,8 +290,14 @@ int main()
     struct circle Circle;
     struct circle2 Circle2;
 
+<<<<<<< HEAD
     printf("Enter the first circle:\n");
 >>>>>>> 2d1f361 (test on calculate)
+||||||| parent of 04674b7 (test for intersection is complited)
+    printf("Enter the first circle:\n");
+=======
+    printf("Enter the first circle like that 'circle(x y,r)' or press enter to exit:\n");
+>>>>>>> 04674b7 (test for intersection is complited)
     fgets(enter, SIZE, stdin);
 
     for (int i = 0; i < strlen(enter); i++) 
