@@ -1,8 +1,5 @@
 #pragma once
 
-struct circle Circle;
-struct circle2 Circle2;
-
 struct point //определение координаты по иксу игрику
 {
     double x;

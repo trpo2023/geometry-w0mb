@@ -14,13 +14,13 @@ int intersection(struct circle* Circle, struct circle2* Circle2)
     //(x2-x1)*(x2-x1)+(y2-y1)*(y2-y1) > (r1+r2)*(r1+r2)
     if (((x2-x1)*(x2-x1)+(y2-y1)*(y2-y1)) <= (radius1+radius2)*(radius1+radius2))
     {
-        printf("circles are intersection\n");
+        printf("\ncircles are intersection\n");
         return 1;
     }
 
     else
     {
-        printf("circles are unintersection:\nx1=%f  y1=%f\nx2=%f   y2=%f\n", x1, y1, x2, y2);
+        printf("\ncircles are unintersection\n");
         return 0;
     }
 }
