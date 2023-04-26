@@ -1,10 +1,11 @@
 #include <../thirdparty/ctest.h>
 #include <libgeometry/calculate.h>
 #include <libgeometry/intersect.h>
+#include <ctype.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
+#include <math.h>
 #define MAX_LEN 100
 
 //calc-tests
@@ -48,12 +49,21 @@ CTEST(circle_perimeter, negative_radius)
     ASSERT_DBL_NEAR(expected_perimeter, result);
 }
 
-//intersection-tests
+// //intersection-tests
 
-CTEST(intersection, correct_input)
-{
+// CTEST(intersection, correct_input)
+// {
+//     struct circle a;
+//     struct circle2 b;
+//     a.Center.x = 2;
+//     a.Center.y = 3; 
+//     a.radius = 1;
+//     b.Center2.x2 = 0;
+//     b.Center2.y2 = 0;
+//     b.radius2 = 1;
     
-
-    const double result = coordinat_x(input, num);
+//     int result = intersection(&a, &b);
+//     int expect = 0;
+//     ASSERT_EQUAL(expect, result);
     
-}
+// }

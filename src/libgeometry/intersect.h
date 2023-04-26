@@ -1,5 +1,8 @@
 #pragma once
 
+struct circle Circle;
+struct circle2 Circle2;
+
 struct point //определение координаты по иксу игрику
 {
     double x;
@@ -32,4 +35,4 @@ struct circle2 // определение радиуса
 
 
 
-void intersection(struct circle* Circle, struct circle2* Circle2);
+int intersection(struct circle* Circle, struct circle2* Circle2);
