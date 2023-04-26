@@ -90,7 +90,7 @@ int main()
     struct circle Circle;
     struct circle2 Circle2;
 
-    printf("Enter the first circle:\n");
+    printf("Enter the first circle like that 'circle(x y,r)' or press enter to exit:\n");
     fgets(enter, SIZE, stdin);
 
     for (int i = 0; i < strlen(enter); i++) 
