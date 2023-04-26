@@ -1,6 +1,9 @@
 <<<<<<< HEAD
 #pragma once
 
+struct circle Circle;
+struct circle2 Circle2;
+
 struct point //определение координаты по иксу игрику
 {
     double x;
@@ -33,6 +36,7 @@ struct circle2 // определение радиуса
 
 
 
+<<<<<<< HEAD
 int intersection(struct circle* Circle, struct circle2* Circle2);
 ||||||| parent of f0ab874 (sdf)
 =======
@@ -72,3 +76,8 @@ struct circle2 // определение радиуса
 
 void intersection(struct circle* Circle, struct circle2* Circle2);
 >>>>>>> f0ab874 (sdf)
+||||||| parent of ef6155b (d)
+void intersection(struct circle* Circle, struct circle2* Circle2);
+=======
+int intersection(struct circle* Circle, struct circle2* Circle2);
+>>>>>>> ef6155b (d)

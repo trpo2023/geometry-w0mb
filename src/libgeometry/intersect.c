@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <libgeometry/intersect.h>
 
+<<<<<<< HEAD
 int intersection(struct circle* Circle, struct circle2* Circle2)
 {
     // double x1 = circle_1->center.x;
@@ -37,6 +38,11 @@ int intersection(struct circle* Circle, struct circle2* Circle2)
 >>>>>>> f0ab874 (sdf)
 
 void intersection(struct circle* Circle, struct circle2* Circle2)
+||||||| parent of ef6155b (d)
+void intersection(struct circle* Circle, struct circle2* Circle2)
+=======
+int intersection(struct circle* Circle, struct circle2* Circle2)
+>>>>>>> ef6155b (d)
 {
     // double x1 = circle_1->center.x;
     double x1 = Circle->Center.x;
@@ -50,7 +56,7 @@ void intersection(struct circle* Circle, struct circle2* Circle2)
     if (((x2-x1)*(x2-x1)+(y2-y1)*(y2-y1)) <= (radius1+radius2)*(radius1+radius2))
     {
         printf("circles are intersection\n");
-        // return 1;
+        return 1;
     }
 
 <<<<<<< HEAD
@@ -70,7 +76,7 @@ void intersection(struct circle* Circle, struct circle2* Circle2)
     else
     {
         printf("circles are unintersection:\nx1=%f  y1=%f\nx2=%f   y2=%f\n", x1, y1, x2, y2);
-        // return 0;
+        return 0;
     }
 }
 >>>>>>> f0ab874 (sdf)
