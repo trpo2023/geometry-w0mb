@@ -111,7 +111,7 @@ int main()
                 exit(EXIT_FAILURE);
             }
         } 
-        elseif (enter[i] == ')') 
+        else if (enter[i] == ')') 
         {
             show_error(ERROR_BRACKET, num, &enter[i]);
             exit(EXIT_FAILURE);
