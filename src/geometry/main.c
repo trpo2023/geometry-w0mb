@@ -1,4 +1,3 @@
-
 #include <ctype.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -21,11 +20,18 @@
 >>>>>>> 2d1f361 (test on calculate)
 #include <libgeometry/geom_parser.h>
 #include <libgeometry/lexer.h>
+<<<<<<< HEAD
 #include <libgeometry/intersect.h>
 
+||||||| parent of f0ab874 (sdf)
+
+=======
+#include <libgeometry/intersect.h>
+>>>>>>> f0ab874 (sdf)
 
 #define SIZE 100
 
+<<<<<<< HEAD
 
 struct point //определение координаты по иксу игрику
 {
@@ -53,6 +59,24 @@ struct circle // определение радиуса
 >>>>>>> 2d1f361 (test on calculate)
 };
 
+||||||| parent of f0ab874 (sdf)
+
+struct point //определение координаты по иксу игрику
+{
+    double x;
+    double y;
+};
+
+struct circle // определение радиуса
+{
+    struct point Center; // ?
+    double radius;
+    double perimeter;
+    double area;
+};
+
+=======
+>>>>>>> f0ab874 (sdf)
 struct point center_search(char* arr, int* num) // ищем центр круга
 {
     struct point Center; 
@@ -65,33 +89,25 @@ struct point center_search(char* arr, int* num) // ищем центр круг�
 
 struct circle circle_search(struct point* Center, char* arr, int* num)
 {
+<<<<<<< HEAD
     struct circle Circle; 
 
     float radius = radius_search(arr, num);
+||||||| parent of f0ab874 (sdf)
+    struct circle Circle; // ?
+=======
+    struct circle Circle; 
+>>>>>>> f0ab874 (sdf)
 
     float radius = radius_search(arr, num);
 
-    Circle.center.x = Center->x; // ?
-    Circle.center.y = Center->y; // ?
+    Circle.center.x = Center->x; 
+    Circle.center.y = Center->y; 
     Circle.radius = radius;
     Circle.perimeter = circle_perimeter(radius);
     Circle.area = circle_area(radius);
 
     return Circle;
-};
-
-struct point2 //определение координаты по иксу игрику
-{
-    double x2;
-    double y2;
-};
-
-struct circle2 // определение радиуса
-{
-    struct point2 Center2; // ?
-    float radius2;
-    float perimeter2;
-    float area2;
 };
 
 struct point2 center_search2(char* arr, int* num) // ищем центр круга
@@ -104,20 +120,20 @@ struct point2 center_search2(char* arr, int* num) // ищем центр кру�
     return Center2;
 };
 
-struct circle2 circle_search2(struct point2* Center2, char* arr, int* num)
-{
-    struct circle2 Circle2; // ?
+ struct circle2 circle_search2(struct point2* Center2, char* arr, int* num)
+ {
+     struct circle2 Circle2; 
 
-    float radius2 = radius_search(arr, num);
+     float radius2 = radius_search(arr, num);
 
-    Circle2.Center2.x2 = Center2->x2; // ?
-    Circle2.Center2.y2 = Center2->y2; // ?
-    Circle2.radius2 = radius2;
-    Circle2.perimeter2 = circle_perimeter(radius2);
-    Circle2.area2 = circle_area(radius2);
+     Circle2.Center2.x2 = Center2->x2; 
+     Circle2.Center2.y2 = Center2->y2; 
+     Circle2.radius2 = radius2;
+     Circle2.perimeter2 = circle_perimeter(radius2);
+     Circle2.area2 = circle_area(radius2);
 
-    return Circle2;
-};
+     return Circle2;
+ };
 
 <<<<<<< HEAD
 
@@ -207,6 +223,7 @@ void show_circle2(struct circle2* Circle2)
 >>>>>>> c60446d (funcs for culc area and perimetr in main-file)
 };
 
+<<<<<<< HEAD
 int intersection(struct circle* circle_1, struct circle2* circle_2)
 {
     double x1 = circle_1->center.x;
@@ -223,6 +240,25 @@ int intersection(struct circle* circle_1, struct circle2* circle_2)
     }
 
 
+||||||| parent of f0ab874 (sdf)
+int intersection(struct circle* circle_1, struct circle2* circle_2)
+{
+    double x1 = circle_1->center.x;
+    double y1 = circle_1->center.y;
+    double radius1 = circle_1->radius;
+    //во второй структуре хранится первый круг
+    double x2 = circle_2->Center2.x2;
+    double y2 = circle_2->Center2.y2;
+    double radius2 = circle_2->radius2;
+    //(x2-x1)*(x2-x1)+(y2-y1)*(y2-y1) > (r1+r2)*(r1+r2)
+    if (((x2-x1)*(x2-x1)+(y2-y1)*(y2-y1)) > (radius1+radius2)*(radius1+radius2))
+    {
+        return 1;
+    }
+
+
+=======
+>>>>>>> f0ab874 (sdf)
 int main()
 {   
 
@@ -241,8 +277,8 @@ int main()
     printf("Enter a geometric figure (or press Enter for exit):\n");
 =======
 
-    struct circle circle_1;
-    struct circle2 circle_2;
+    struct circle Circle;
+    struct circle2 Circle2;
 
     printf("Enter the first circle:\n");
 >>>>>>> 2d1f361 (test on calculate)
@@ -260,6 +296,7 @@ int main()
                 is_end_empty(enter, &num);
                 show_circle(&Circle);
 <<<<<<< HEAD
+<<<<<<< HEAD
                 break;
             } 
             else 
@@ -273,15 +310,25 @@ int main()
             }
             else
 >>>>>>> 2d1f361 (test on calculate)
+||||||| parent of f0ab874 (sdf)
+                circle_1 = circle_search(&Center, enter, &num);
+                // break;
+            }
+            else
+=======
+                break;
+            } 
+            else 
+>>>>>>> f0ab874 (sdf)
             {
-                // show_error(ERROR_NAME, 0, NULL);
-                // exit(EXIT_FAILURE);
+                show_error(ERROR_NAME, 0, NULL);
+                exit(EXIT_FAILURE);
             }
         } 
         else if (enter[i] == ')') 
         {
-            // show_error(ERROR_BRACKET, num, &enter[i]);
-            // exit(EXIT_FAILURE);
+            show_error(ERROR_BRACKET, num, &enter[i]);
+            exit(EXIT_FAILURE);
         }
 
         figure[num] = enter[i];
@@ -289,6 +336,7 @@ int main()
     }
     
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     char enter1[SIZE], figure1[SIZE];
@@ -303,11 +351,17 @@ int main()
 ||||||| parent of 2d1f361 (test on calculate)
     printf("Enter an another geometric figure (or press Enter for exit):\n");
 =======
+||||||| parent of f0ab874 (sdf)
+    num = 0;
+=======
+>>>>>>> f0ab874 (sdf)
     char enter1[SIZE], figure1[SIZE];
+    num = 0;
+
     printf("Enter the second circle:\n");
 >>>>>>> 2d1f361 (test on calculate)
     fgets(enter1, SIZE, stdin);
-    num = 0;
+
     for (int i = 0; i < strlen(enter1); i++)
     {
 <<<<<<< HEAD
@@ -366,31 +420,40 @@ int main()
 =======
         if (enter1[i] =='(' || enter1[i] == ' ')
     {
-        to_lower(figure1, num);
-        if (strcmp(figure1, "circle") == 0)
-        {
-        struct point2 Center2 = center_search2(enter1, &num); // ?
-        struct circle2 Circle2 = circle_search2(&Center2, enter1, &num); // ?
-        is_end_empty(enter1, &num);
-        show_circle2(&Circle2);
-        circle_2 = circle_search2(&Center2, enter1, &num);
-        break;
-        }
-        else
-         {
-            // show_error(ERROR_NAME, 0, NULL);
-            // exit(EXIT_FAILURE);
-        }
+            to_lower(figure1, num);
+            if (strcmp(figure1, "circle") == 0)
+            {
+                struct point2 Center2 = center_search2(enter1, &num);
+                Circle2 = circle_search2(&Center2, enter1, &num); 
+                is_end_empty(enter1, &num);
+                show_circle2(&Circle2);
+                break;
+            }
+            else
+            {
+                show_error(ERROR_NAME, 0, NULL);
+                exit(EXIT_FAILURE);
+            }
     }
     else if (enter1[i] == '(')
     {
-        // show_error(ERROR_BRACKET, num, &enter1[i]);
-        // exit(EXIT_FAILURE);
+        show_error(ERROR_BRACKET, num, &enter1[i]);
+        exit(EXIT_FAILURE);
     }
+<<<<<<< HEAD
     figure1[num] = enter1[i];
     num++;
 >>>>>>> 2d1f361 (test on calculate)
+||||||| parent of f0ab874 (sdf)
+    figure1[num] = enter1[i];
+    num++;
+=======
+
+        figure1[num] = enter1[i];
+        num++;
+>>>>>>> f0ab874 (sdf)
     }
+<<<<<<< HEAD
 <<<<<<< HEAD
 
     intersection(&Circle, &Circle2);
@@ -412,5 +475,16 @@ int main()
     else{printf("circles are unintersection");}
     
 >>>>>>> 2d1f361 (test on calculate)
+||||||| parent of f0ab874 (sdf)
+    
+    int a = intersection(&circle_1, &circle_2);
+    if(a == 1){printf("circles are intersection");}
+    else{printf("circles are unintersection");}
+    
+=======
+
+    intersection(&Circle, &Circle2);
+
+>>>>>>> f0ab874 (sdf)
     return 0;
 }
