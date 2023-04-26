@@ -39,8 +39,8 @@ int intersection(struct circle* Circle, struct circle2* Circle2)
 void intersection(struct circle* Circle, struct circle2* Circle2)
 {
     // double x1 = circle_1->center.x;
-    double x1 = Circle->center.x;
-    double y1 = Circle->center.y;
+    double x1 = Circle->Center.x;
+    double y1 = Circle->Center.y;
     double radius1 = Circle->radius;
     //во второй структуре хранится первый круг
     double x2 = Circle2->Center2.x2;
