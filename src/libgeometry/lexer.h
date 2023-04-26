@@ -5,7 +5,6 @@
 #define BLUE "\e[1;34m"
 #define CLOSE "\e[0m"
 
-
 enum ERROR {
     ERROR_NAME,
     ERROR_BRACKET,

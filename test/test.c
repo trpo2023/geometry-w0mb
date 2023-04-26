@@ -6,6 +6,8 @@
 
 #define MAX_LEN 100
 
+//calc-tests
+
 CTEST(circle_area, correct_input)
 {
     const float radius = 5.0;
@@ -44,6 +46,8 @@ CTEST(circle_perimeter, negative_radius)
 
     ASSERT_DBL_NEAR(expected_perimeter, result);
 }
+
+//parser-tests
 
 CTEST(input_test, correct_input)
 {
