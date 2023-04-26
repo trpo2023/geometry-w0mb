@@ -26,8 +26,8 @@ struct circle circle_search(struct point* Center, char* arr, int* num)
 
     float radius = radius_search(arr, num);
 
-    Circle.center.x = Center->x; 
-    Circle.center.y = Center->y; 
+    Circle.Center.x = Center->x; 
+    Circle.Center.y = Center->y; 
     Circle.radius = radius;
     Circle.perimeter = circle_perimeter(radius);
     Circle.area = circle_area(radius);
@@ -63,8 +63,8 @@ struct point2 center_search2(char* arr, int* num) // ищем центр кру�
 void show_circle(struct circle* Circle)
 {
     printf("\ncircle(%.2f %.2f, %.2f, %.2f, %.2f)\n",
-           Circle->center.x,
-           Circle->center.y,
+           Circle->Center.x,
+           Circle->Center.y,
            Circle->radius,
            Circle->perimeter,
            Circle->area);
@@ -81,7 +81,9 @@ void show_circle2(struct circle2* Circle2)
 };
 
 int main()
-{
+{   
+
+
     char enter[SIZE], figure[SIZE];
     int num = 0;
 
