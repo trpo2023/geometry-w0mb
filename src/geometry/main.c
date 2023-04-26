@@ -101,8 +101,8 @@ struct circle circle_search(struct point* Center, char* arr, int* num)
 
     float radius = radius_search(arr, num);
 
-    Circle.center.x = Center->x; 
-    Circle.center.y = Center->y; 
+    Circle.Center.x = Center->x; 
+    Circle.Center.y = Center->y; 
     Circle.radius = radius;
     Circle.perimeter = circle_perimeter(radius);
     Circle.area = circle_area(radius);
@@ -200,6 +200,7 @@ void show_circle2(struct circle2* Circle2)
 >>>>>>> c60446d (funcs for culc area and perimetr in main-file)
 };
 
+<<<<<<< HEAD
 void show_circle2(struct circle2* Circle2)
 {
     printf("\ncircle2(%.2f %.2f, %.2f, %.2f, %.2f)\n",
@@ -263,6 +264,15 @@ int main()
 {   
 
 
+||||||| parent of 137aacd (REGISTER FIX)
+int main()
+{
+=======
+int main()
+{   
+
+
+>>>>>>> 137aacd (REGISTER FIX)
     char enter[SIZE], figure[SIZE];
     int num = 0;
 <<<<<<< HEAD

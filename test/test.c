@@ -96,6 +96,7 @@ CTEST(intersection, correct_input)
 =======
 #include <../thirdparty/ctest.h>
 #include <libgeometry/calculate.h>
+#include <libgeometry/intersect.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -143,14 +144,13 @@ CTEST(circle_perimeter, negative_radius)
     ASSERT_DBL_NEAR(expected_perimeter, result);
 }
 
-//parser-tests
+//intersection-tests
 
-CTEST(input_test, correct_input)
+CTEST(intersection, correct_input)
 {
-    char input[MAX_LEN];
-    strcpy(input, "circle(0 0,1.5)");
-    float c_x, c_y, c_r;
+    
 
+<<<<<<< HEAD
     ASSERT_EQUAL(3, sscanf(input, "circle(%f %f,%f)", &c_x, &c_y, &c_r));
     ASSERT_EQUAL(0, strncmp(input, "circle(", 7));
     ASSERT_EQUAL(0.0, c_x);
@@ -158,3 +158,15 @@ CTEST(input_test, correct_input)
     ASSERT_EQUAL(1.5, c_r);
 }
 >>>>>>> 2d1f361 (test on calculate)
+||||||| parent of 137aacd (REGISTER FIX)
+    ASSERT_EQUAL(3, sscanf(input, "circle(%f %f,%f)", &c_x, &c_y, &c_r));
+    ASSERT_EQUAL(0, strncmp(input, "circle(", 7));
+    ASSERT_EQUAL(0.0, c_x);
+    ASSERT_EQUAL(0.0, c_y);
+    ASSERT_EQUAL(1.5, c_r);
+}
+=======
+    const double result = coordinat_x(input, num);
+    
+}
+>>>>>>> 137aacd (REGISTER FIX)
