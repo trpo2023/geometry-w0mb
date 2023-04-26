@@ -15,7 +15,7 @@ struct point2 //определение координаты по иксу игр
 
 struct circle // определение радиуса
 {
-    struct point center; // ?
+    struct point Center; // ?
     float radius;
     float perimeter;
     float area;
