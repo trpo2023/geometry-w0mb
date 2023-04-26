@@ -4,8 +4,6 @@
 #include <ctype.h>
 #include <stdlib.h>
 
-
-
 void show_error(int ERROR, int num, char* ch)
 {
     for (int i = 0; i < num; i++) {
