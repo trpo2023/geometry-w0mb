@@ -75,8 +75,8 @@ CTEST(intersection, correct_input)
     b.Center2.y2 = 0;
     b.radius2 = 1;
     
-    int result = intersection(&z, &v);
-    int expect = 1;
+    result = intersection(&z, &v);
+    expect = 1;
     ASSERT_EQUAL(expect, result);
 
     struct circle dead;
@@ -88,8 +88,8 @@ CTEST(intersection, correct_input)
     b.Center2.y2 = 2;
     b.radius2 = 1;
     
-    int result = intersection(&dead, &kill);
-    int expect = 1;
+    result = intersection(&dead, &kill);
+    expect = 1;
     ASSERT_EQUAL(expect, result);
     
 }
