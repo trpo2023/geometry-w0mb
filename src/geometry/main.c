@@ -1,18 +1,18 @@
 #include <ctype.h>
+#include <libgeometry/calculate.h>
+#include <libgeometry/geom_parser.h>
+#include <libgeometry/intersect.h>
+#include <libgeometry/lexer.h>
+#include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <math.h>
-#include <libgeometry/calculate.h>
-#include <libgeometry/geom_parser.h>
-#include <libgeometry/lexer.h>
-#include <libgeometry/intersect.h>
 
 #define SIZE 100
 
 struct point center_search(char* arr, int* num) // ищем центр круга
 {
-    struct point Center; 
+    struct point Center;
 
     Center.x = coordinat_x(arr, num);
     Center.y = coordinat_y(arr, num);
@@ -22,7 +22,7 @@ struct point center_search(char* arr, int* num) // ищем центр круг�
 
 struct point2 center_search2(char* arr, int* num) // ищем центр круга
 {
-    struct point2 Center2; 
+    struct point2 Center2;
 
     Center2.x2 = coordinat_x(arr, num);
     Center2.y2 = coordinat_y(arr, num);
@@ -32,12 +32,12 @@ struct point2 center_search2(char* arr, int* num) // ищем центр кру�
 
 struct circle circle_search(struct point* Center, char* arr, int* num)
 {
-    struct circle Circle; 
+    struct circle Circle;
 
     float radius = radius_search(arr, num);
 
-    Circle.Center.x = Center->x; 
-    Circle.Center.y = Center->y; 
+    Circle.Center.x = Center->x;
+    Circle.Center.y = Center->y;
     Circle.radius = radius;
     Circle.perimeter = circle_perimeter(radius);
     Circle.area = circle_area(radius);
@@ -45,20 +45,20 @@ struct circle circle_search(struct point* Center, char* arr, int* num)
     return Circle;
 };
 
- struct circle2 circle_search2(struct point2* Center2, char* arr, int* num)
- {
-     struct circle2 Circle2; 
+struct circle2 circle_search2(struct point2* Center2, char* arr, int* num)
+{
+    struct circle2 Circle2;
 
-     float radius2 = radius_search(arr, num);
+    float radius2 = radius_search(arr, num);
 
-     Circle2.Center2.x2 = Center2->x2; 
-     Circle2.Center2.y2 = Center2->y2; 
-     Circle2.radius2 = radius2;
-     Circle2.perimeter2 = circle_perimeter(radius2);
-     Circle2.area2 = circle_area(radius2);
+    Circle2.Center2.x2 = Center2->x2;
+    Circle2.Center2.y2 = Center2->y2;
+    Circle2.radius2 = radius2;
+    Circle2.perimeter2 = circle_perimeter(radius2);
+    Circle2.area2 = circle_area(radius2);
 
-     return Circle2;
- };
+    return Circle2;
+};
 
 void show_circle(struct circle* Circle)
 {
@@ -81,38 +81,32 @@ void show_circle2(struct circle2* Circle2)
 };
 
 int main()
-{      
+{
     char enter[SIZE], figure[SIZE];
     int num = 0;
 
     struct circle Circle;
     struct circle2 Circle2;
 
-    printf("Enter the first circle like that 'circle(x y,r)' or press enter to exit:\n");
+    printf("Enter the first circle like that 'circle(x y,r)' or press enter to "
+           "exit:\n");
 
     fgets(enter, SIZE, stdin);
 
-    for (int i = 0; i < strlen(enter); i++) 
-    {
-        if (enter[i] == '(' || enter[i] == ' ') 
-        {
+    for (int i = 0; i < strlen(enter); i++) {
+        if (enter[i] == '(' || enter[i] == ' ') {
             to_lower(figure, num);
-            if (strcmp(figure, "circle") == 0) 
-            {   
+            if (strcmp(figure, "circle") == 0) {
                 struct point Center = center_search(enter, &num);
                 Circle = circle_search(&Center, enter, &num);
                 is_end_empty(enter, &num);
                 show_circle(&Circle);
                 break;
-            } 
-            else
-            {
+            } else {
                 show_error(ERROR_NAME, 0, NULL);
                 exit(EXIT_FAILURE);
             }
-        } 
-        else if (enter[i] == ')') 
-        {
+        } else if (enter[i] == ')') {
             show_error(ERROR_BRACKET, num, &enter[i]);
             exit(EXIT_FAILURE);
         }
@@ -120,37 +114,30 @@ int main()
         figure[num] = enter[i];
         num++;
     }
-  
+
     char enter1[SIZE], figure1[SIZE];
     num = 0;
 
     printf("Enter the second circle:\n");
     fgets(enter1, SIZE, stdin);
 
-    for (int i = 0; i < strlen(enter1); i++)
-    {
-        if (enter1[i] =='(' || enter1[i] == ' ')
-    {
+    for (int i = 0; i < strlen(enter1); i++) {
+        if (enter1[i] == '(' || enter1[i] == ' ') {
             to_lower(figure1, num);
-            if (strcmp(figure1, "circle") == 0)
-            {
+            if (strcmp(figure1, "circle") == 0) {
                 struct point2 Center2 = center_search2(enter1, &num);
-                Circle2 = circle_search2(&Center2, enter1, &num); 
+                Circle2 = circle_search2(&Center2, enter1, &num);
                 is_end_empty(enter1, &num);
                 show_circle2(&Circle2);
                 break;
-            }
-            else
-            {
+            } else {
                 show_error(ERROR_NAME, 0, NULL);
                 exit(EXIT_FAILURE);
             }
-    }
-    else if (enter1[i] == '(')
-    {
-        show_error(ERROR_BRACKET, num, &enter1[i]);
-        exit(EXIT_FAILURE);
-    }
+        } else if (enter1[i] == '(') {
+            show_error(ERROR_BRACKET, num, &enter1[i]);
+            exit(EXIT_FAILURE);
+        }
 
         figure1[num] = enter1[i];
         num++;
