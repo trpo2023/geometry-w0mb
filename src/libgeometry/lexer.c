@@ -45,8 +45,6 @@ void to_lower(char* str, int num)
     }
 }
 
-
-
 void is_end_empty(char* arr, int* num)
 {
     *num += 1;

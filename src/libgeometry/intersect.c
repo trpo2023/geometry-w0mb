@@ -1,5 +1,5 @@
-#include <stdio.h>
 #include <libgeometry/intersect.h>
+#include <stdio.h>
 
 int intersection(struct circle* Circle, struct circle2* Circle2)
 {
@@ -12,14 +12,13 @@ int intersection(struct circle* Circle, struct circle2* Circle2)
     double y2 = Circle2->Center2.y2;
     double radius2 = Circle2->radius2;
     //(x2-x1)*(x2-x1)+(y2-y1)*(y2-y1) > (r1+r2)*(r1+r2)
-    if (((x2-x1)*(x2-x1)+(y2-y1)*(y2-y1)) <= (radius1+radius2)*(radius1+radius2))
-    {
+    if (((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1))
+        <= (radius1 + radius2) * (radius1 + radius2)) {
         printf("\ncircles are intersection\n");
         return 1;
     }
 
-    else
-    {
+    else {
         printf("\ncircles are unintersection\n");
         return 0;
     }

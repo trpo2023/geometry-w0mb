@@ -1,7 +1,7 @@
-#include <libgeometry/geom_parser.h>
-#include <libgeometry/lexer.h>
-#include <libgeometry/intersect.h>
 #include <ctype.h>
+#include <libgeometry/geom_parser.h>
+#include <libgeometry/intersect.h>
+#include <libgeometry/lexer.h>
 #include <math.h>
 #include <stdlib.h>
 #include <string.h>
