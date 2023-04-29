@@ -62,20 +62,22 @@ struct circle2 circle_search2(struct point2* Center2, char* arr, int* num)
 
 void show_circle(struct circle* Circle)
 {
-    printf("\ncircle(%.2f %.2f, %.2f, %.2f, %.2f)\n",
+    printf("\ncircle(%.2f %.2f, %.2f)\n",
            Circle->Center.x,
            Circle->Center.y,
-           Circle->radius,
+           Circle->radius);
+    printf("\nperimeter = %.2f\n\narea = %.2f\n",
            Circle->perimeter,
            Circle->area);
 };
 
 void show_circle2(struct circle2* Circle2)
 {
-    printf("\ncircle2(%.2f %.2f, %.2f, %.2f, %.2f)\n",
+    printf("\ncircle2(%.2f %.2f, %.2f)\n",
            Circle2->Center2.x2,
            Circle2->Center2.y2,
-           Circle2->radius2,
+           Circle2->radius2);
+    printf("\nperimeter = %.2f\n\narea = %.2f\n",
            Circle2->perimeter2,
            Circle2->area2);
 };
