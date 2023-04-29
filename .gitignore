@@ -1,6 +1,5 @@
-*.a
-*.d
-*.o
-bin/geometry
-.vscode
-main_test
+*geometry
+*exe
+*obj/src/libgeometry
+*obj/src/geometry
+*obj/test
